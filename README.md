@@ -16,8 +16,7 @@ The browser versions currently experienced and tested are: Firefox (for all the 
 The deployment and installation of the browser-shots tool is strongly dependent on different other packages, since it uses "off-the-shelf" components that need to be already available on your system, such as:
  - Selenium 2.24.1
  - Firefox 3.6
-
-In order to make all the tools running together, in a suitable environment, the following applications/packages need to be installed :
+ - Cloudera Hadoop Distribution (HDFS, MapReduce)
 
 In order to make all the tools running together, in a suitable environment, the following applications/packages need to be installed :
 
@@ -26,7 +25,6 @@ Reference : http://pypi.python.org/pypi/selenium
 
   **1.2.** If the Graphical User Interface (GUI) is not available in your system, you can use an X server (for example, we used Xvfb v 11)
 Packages to be installed: xvfb, xfonts-base, xfonts-75dpi, xfonts-100dpi, libgl1-mesa-dri, xfonts-scalable, xfonts-cyrillic, gnome-icon-theme-symbolic
-
 
 
 ###2. Testing and running the main building blocks :
@@ -60,3 +58,7 @@ If this is the case, you need to run the Xserver first :
 
     $ Xvfb :1 -screen 0 1024x768x24 &
     $ DISPLAY=:1 firefox http://google.com
+
+
+
+###3. Running the job :
