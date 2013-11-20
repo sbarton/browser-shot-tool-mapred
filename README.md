@@ -94,4 +94,7 @@ The parameters of job can be acuired by running following command:
 
 Invoking the command using the hadoop command ensures, that necessary hadoop dependencies are set on the java's class path. The order of the mentioned browsers does matter, where the first is the reference browser - all other snapshots are compared to this one.
 
+Parameter -definition denotes the XML representation of the Marcalizer configuration. Example file can be found in the project sources (src/main/example). This file needs to be present at each worker machine on the specified path.
 
+**3.3. Collecting the results**  
+The results can be found in the HDFS directory denoted as -output parameter. The results contains a zip file containing an XML file for each pair of comparisons.
