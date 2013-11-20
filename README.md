@@ -70,26 +70,26 @@ If this is the case, you need to run the Xserver first :
 
 **3.1. Build the maven project**  
 
-$ cd <project_base_dir>
-$ mvn package
+    $ cd <project_base_dir>
+    $ mvn package
 
 This command will build the jar we use to run the job, but also creates a lib dir where it puts all the dependencies, that need to be present (and on the hadoop class path) of each workder node in the Hadoop cluster (worker node is a node running TaskTracker deamon).
 
-$ ls  <project_base_dir>/target/Browsershots-0.9-SNAPSHOT-bin/Browsershots-0.9-SNAPSHOT/lib/
+    $ ls  <project_base_dir>/target/Browsershots-0.9-SNAPSHOT-bin/Browsershots-0.9-SNAPSHOT/lib/
 
 	
 **3.2. Run the job**  
 
 The parameters of job can be acuired by running following command:
-	$ hadoop jar <path_to_the_project_jar>/<project.jar> net.internetmemory.browsershots.PageRenderCompareMapRed -help
+    $ hadoop jar <path_to_the_project_jar>/<project.jar> net.internetmemory.browsershots.PageRenderCompareMapRed -help
 
-$ usage: PageRenderCompareMapRed
-$ -browser <browsers>        list of browsers, at least two, e.g. -browser
-                            b1 -browser b2
-$ -definition <definition>   marcalizer definition file path
-$ -help                      print this message
-$ -input <Input path>        Path input
-$ -output <output path>      Path output
+    $ usage: PageRenderCompareMapRed
+    $ -browser <browsers>        list of browsers, at least two, e.g. -browser
+    $                            b1 -browser b2
+    $ -definition <definition>   marcalizer definition file path
+    $ -help                      print this message
+    $ -input <Input path>        Path input
+    $ -output <output path>      Path output
 
 
 Invoking the command using the hadoop command ensures, that necessary hadoop dependencies are set on the java's class path. The order of the mentioned browsers does matter, where the first is the reference browser - all other snapshots are compared to this one.
